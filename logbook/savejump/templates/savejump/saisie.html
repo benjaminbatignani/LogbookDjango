@@ -1,0 +1,214 @@
+{% extends 'savejump/base.html' %}
+
+{% block content %}
+
+    <div class="saisie1">
+        <div class="bloc-saut">
+            <div class="bloc-header">
+                SAUT
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Date</label>
+                        <div class="control">
+                            <input class="input is-small" type="date" placeholder="01/01/1900">
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Lieu</label>
+                          <div class="control">
+                            <div class="select is-fullwidth is-small">
+                              <select>
+                                  <option value="">-</option>
+                                <option>Lasclaveries</option>
+                                <option>Saint-François</option>
+                                <option>Biarritz</option>
+                              </select>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Hauteur</label>
+                        <div class="control">
+                            <div class="select is-fullwidth is-small">
+                              <select>
+                                  <option value="">-</option>
+                                <option>1500</option>
+                                <option>3000</option>
+                                <option>4000</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Avion</label>
+                        <div class="control">
+                            <div class="select is-fullwidth is-small">
+                              <select>
+                                  <option value="">-</option>
+                                <option>Pilatus F-GJDA</option>
+                                <option>Twin-Otter F-GHRK</option>
+                                <option>PA-31</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Type de saut</label>
+                        <div class="control">
+                            <input class="input is-small" type="text" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label class="checkbox custom-check">
+                  <input type="checkbox" />
+                   Se souvenir des informations
+                </label>
+            </div>
+            <div class="field comment">
+                <label class="label">Commentaire</label>
+                <div class="control">
+                    <textarea class="textarea is-small" placeholder="Comments"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- BLOC MATERIEL-->
+        <div class="bloc-materiel">
+            <div class="bloc-header">
+                MATERIEL
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Sacs enregistrés</label>
+                        <div class="control">
+                            <div class="select is-fullwidth is-rounded">
+                              <select>
+                                  <option value="">-</option>
+                                <option>Vector</option>
+                                <option>Micro Sigma 1</option>
+                                <option>Micro Sigma 2</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-8">
+                    <div class="field">
+                        <label class="label">Voile principale</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                              <select>
+                                  <option value="">-</option>
+                                <option>Leia</option>
+                                <option>Icarus</option>
+                                <option>JVX</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Superficie</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                              <select>
+                                  <option value="">-</option>
+                                <option>72</option>
+                                <option>330</option>
+                                <option>364</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-8">
+                    <div class="field">
+                        <label class="label">Voile de secours</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                              <select>
+                                  <option value="">-</option>
+                                <option>PD-R</option>
+                                <option>Techno</option>
+                                <option>VR-360</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Superficie</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                              <select>
+                                  <option value="">-</option>
+                                <option>113</option>
+                                <option>98</option>
+                                <option>360</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Sac Harnais</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                              <select>
+                                  <option value="">-</option>
+                                <option>Atom</option>
+                                <option>Advance</option>
+                                <option>Vector</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Système de sécurité</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                              <select>
+                                  <option value="">-</option>
+                                <option>Vigil 2</option>
+                                <option>Cypres C-mode</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bloc-details">
+
+        </div>
+    </div>
+
+    <button class="button is-primary is-large save-btn">ENREGISTRER</button>
+
+
+{% endblock content %}

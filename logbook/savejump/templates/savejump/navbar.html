@@ -1,0 +1,56 @@
+{% load static %}
+
+<!-- header -->
+    <nav class="navbar has-shadow is-fixed-top is-dark" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <img src="{% static 'savejump/images/logo.png' %}" alt="logo" class="logo-menu ml-4">
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item ml-6" href="{% url 'indexSaveJump' %}">
+            Accueil
+          </a>
+
+          <a class="navbar-item mx-5" href="{% url 'saisie' %}">
+            Saisie Saut
+          </a>
+
+          <a class="navbar-item mx-5" href="{% url 'jumpform' %}">
+            JumpForm
+          </a>
+
+          <a class="navbar-item mx-5">
+            Logbook
+          </a>
+        </div>
+      </div>
+<!--        <div class="navbar-end">-->
+<!--          <div class="navbar-item has-dropdown is-hoverable">-->
+<!--            <a class="navbar-link">-->
+<!--              Paramètres-->
+<!--            </a>-->
+
+<!--            <div class="navbar-dropdown">-->
+<!--              <a class="navbar-item">-->
+<!--                Réglages-->
+<!--              </a>-->
+<!--              <a class="navbar-item is-selected">-->
+<!--                Mon compte-->
+<!--              </a>-->
+<!--              <hr class="navbar-divider">-->
+<!--              <a class="navbar-item">-->
+<!--                Déconnexion-->
+<!--              </a>-->
+<!--            </div>-->
+          </div>
+        </div>
+    </nav>
+    <!-- header -->

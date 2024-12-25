@@ -1,0 +1,83 @@
+{% extends 'savejump/base.html' %}
+
+{% block content %}
+    <div class="block stat-container">
+        <div class="about-stat-container">
+            <div class="stat-titre">Total sauts</div>
+            <div class="stat-chiffre">1200</div>
+        </div>
+        <div class="about-stat-container">
+            <div class="stat-titre">Total sauts 2024</div>
+            <div class="stat-chiffre">436</div>
+        </div>
+    </div>
+    <div class="block titre-tableau">
+        <div>Derniers sauts enregistrés</div>
+    </div>
+
+    <!-- Tableau des sauts-->
+    <div class="table-container">
+        <table class="table custom-table is-striped is-hoverable is-fullwidth">
+            <thead>
+                <th><abbr title="Numéro de saut">N°</abbr></th>
+                <th>Date</th>
+                <th>Lieu</th>
+                <th>Hauteur</th>
+                <th>Avion</th>
+                <th><abbr title="Type de saut">Type</abbr></th>
+                <th>Parachute</th>
+                <th>Commentaire</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>234</th>
+                    <td>12/02/2024</td>
+                    <td>Lasclaveries</td>
+                    <td>4000 m</td>
+                    <td>Pilatus</td>
+                    <td>Tandem</td>
+                    <td>Micro Sigma 1</td>
+                    <td>Saut avec Patrice Dupont</td>
+                </tr>
+                <tr>
+                    <th>235</th>
+                    <td>12/02/2024</td>
+                    <td>Lasclaveries</td>
+                    <td>4000 m</td>
+                    <td>Pilatus</td>
+                    <td>Tandem</td>
+                    <td>Micro Sigma 1</td>
+                    <td>Saut avec Patrice Dupont</td>
+                </tr>
+                <tr>
+                    <th>236</th>
+                    <td>12/02/2024</td>
+                    <td>Lasclaveries</td>
+                    <td>4000 m</td>
+                    <td>Pilatus</td>
+                    <td>Tandem</td>
+                    <td>Micro Sigma 1</td>
+                    <td>Saut avec Patrice Dupont</td>
+                </tr>
+                <tr>
+                    <th>237</th>
+                    <td>12/02/2024</td>
+                    <td>Lasclaveries</td>
+                    <td>4000 m</td>
+                    <td>Pilatus</td>
+                    <td>Tandem</td>
+                    <td>Micro Sigma 1</td>
+                    <td>Saut avec Patrice Dupont</td>
+                </tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+    <div>
+        {% for jump in jumps %}
+            <p>{{jump.date}}, {{jump.parachute}}</p>
+        {% endfor %}
+    </div>
+{% endblock content %}

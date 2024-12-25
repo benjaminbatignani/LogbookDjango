@@ -1,0 +1,32 @@
+{% extends 'savejump/base.html' %}
+
+{% block content %}
+
+    <form action="{% url 'jumpform' %}" method="post" class="cust-form">
+       {% csrf_token %}
+
+        <div class="field">
+            <label class="label">Numéro du saut</label>
+            <div class="control">
+                <span>{{form.number}}</span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Lieu</label>
+            <div class="control">
+                <span>{{form.location}}</span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Parachute</label>
+            <div class="control">
+                <span>{{form.parachute}}</span>
+            </div>
+        </div>
+
+        <input type="submit" value="Valider">
+    </form>
+
+{% endblock content %}
