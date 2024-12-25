@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.index, name='indexSaveJump'),
     path('saisie/', views.saisie, name='saisie'),
     path('jumpform/', views.jumpform, name='jumpform'),
+    path('jumplist/', views.jumplist, name='jumplist')
     ]

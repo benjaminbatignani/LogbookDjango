@@ -1,5 +1,5 @@
 from django import forms
-from .models import Location, Parachute
+from .models import Location, Parachute, Jump
 from django.forms import ModelChoiceField
 
 # Cette classe permet de dire à Django que la propriété à utiliser dans le modèle
@@ -15,7 +15,9 @@ class ParachuteModelChoiceField(ModelChoiceField):
 
 
 class JumpForm(forms.Form):
-    number = forms.IntegerField(widget=forms.TextInput, label="Numéro du saut", required=True)
+    number = forms.IntegerField(label="Numéro du saut",
+                                )
+
     location = LocationModelChoiceField(label='Lieu',
                                       queryset=Location.objects.all().order_by('location_name'),
                                       empty_label='- Lieu -')

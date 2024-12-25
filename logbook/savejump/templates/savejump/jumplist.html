@@ -1,0 +1,41 @@
+{% extends 'savejump/base.html' %}
+
+{% block content %}
+
+
+
+    <div class="table-container marge-haut-page">
+        <table class="table custom-table is-striped is-hoverable is-fullwidth">
+            <thead>
+                <th><abbr title="Numéro de saut">N°</abbr></th>
+                <th>Date</th>
+                <th>Lieu</th>
+                <th>Hauteur</th>
+                <th>Avion</th>
+                <th><abbr title="Type de saut">Type</abbr></th>
+                <th>Parachute</th>
+                <th>Commentaire</th>
+            </thead>
+            <tbody>
+            {% for jump in jumps %}
+                <tr>
+                    <th>{{jump.jump_number}}</th>
+                    <td>{{jump.jump_date | date:"d / m / Y"}}</td>
+                    <td>{{jump.id_location.location_name}}</td>
+                    <td>{{jump.id_altitude.altitude}}</td>
+                    <td>{{jump.id_aircraft.aircraft}}</td>
+                    <td>{{jump.id_jump_type.type}}</td>
+                    <td>{{jump.id_parachute.harness_name}}</td>
+                    <td>{{jump.comment}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+
+
+
+{% endblock content %}

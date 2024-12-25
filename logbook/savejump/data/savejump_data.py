@@ -108,3 +108,35 @@ class SaveJumpData:
         finally:
             if connection is not None:
                 connection.close()
+
+    def get_last_jump_number(self):
+
+        req_sql = """SELECT jump.jump_number FROM jump ORDER BY jump_number DESC"""
+
+        connection = None
+        try:
+            # obtention de la connexion à la base de données
+
+            connection = psycopg2.connect(host=self._host, database=self._database, user=self._user,
+                                          password=self._password, port=self._port)
+            # create a new cursor
+            cursor = connection.cursor()
+
+            # ENREGISTREMENT DU SAUT
+            cursor.execute(req_sql)
+
+            last_jump_number = cursor.fetchone()[0]
+
+            # commit the changes to the database
+            connection.commit()
+            # close communication with the database
+            cursor.close()
+
+            return last_jump_number
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            print("Erreur get_last_jump_number:")
+            print(error)
+        finally:
+            if connection is not None:
+                connection.close()

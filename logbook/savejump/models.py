@@ -23,6 +23,7 @@ class Jump(models.Model):
     id_jump = models.SmallAutoField(primary_key=True)
     jump_number = models.SmallIntegerField(blank=True, null=True)
     jump_date = models.DateField(blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
     id_jump_type = models.ForeignKey('JumpType', models.DO_NOTHING, db_column='id_jump_type', blank=True, null=True)
     id_altitude = models.ForeignKey(Altitude, models.DO_NOTHING, db_column='id_altitude', blank=True, null=True)
     id_location = models.ForeignKey('Location', models.DO_NOTHING, db_column='id_location', blank=True, null=True)
