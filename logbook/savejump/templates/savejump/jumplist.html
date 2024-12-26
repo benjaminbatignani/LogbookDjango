@@ -2,8 +2,6 @@
 
 {% block content %}
 
-
-
     <div class="table-container marge-haut-page">
         <table class="table custom-table is-striped is-hoverable is-fullwidth">
             <thead>
@@ -22,7 +20,7 @@
                     <th>{{jump.jump_number}}</th>
                     <td>{{jump.jump_date | date:"d / m / Y"}}</td>
                     <td>{{jump.id_location.location_name}}</td>
-                    <td>{{jump.id_altitude.altitude}}</td>
+                    <td>{{jump.id_altitude.altitude}} m</td>
                     <td>{{jump.id_aircraft.aircraft}}</td>
                     <td>{{jump.id_jump_type.type}}</td>
                     <td>{{jump.id_parachute.harness_name}}</td>

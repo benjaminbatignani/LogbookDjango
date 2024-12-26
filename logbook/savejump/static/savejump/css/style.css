@@ -53,10 +53,6 @@
     align-items: center;
 }
 
-.form{
-    text-align: left;
-}
-
 .remember-me{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -147,3 +143,8 @@
 .marge-haut-page{
     margin-top: 200px;
 }
+
+.form-container{
+    width : 400px;
+}
+

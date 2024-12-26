@@ -25,16 +25,23 @@ def jumpform(request):
 
         if form.is_valid():
             numero_saut = form.cleaned_data["number"]
+            altitude = form.cleaned_data["altitude"].altitude
+            aircraft = form.cleaned_data["aircraft"].aircraft
             location = form.cleaned_data["location"].location_name
+            jump_type = form.cleaned_data["jump_type"].type
             parachute = form.cleaned_data["parachute"].harness_name
-            jump_date = datetime.date.today()
+            jump_date = form.cleaned_data["jump_date"]
+            comment = form.cleaned_data["comment"]
 
             data = SaveJumpData()
 
+            id_altitude = data.get_altitude_id(altitude)
+            id_aircraft = data.get_aircraft_id(aircraft)
             id_location = data.get_location_id(location)
+            id_jump_type = data.get_jump_type_id(jump_type)
             id_parachute = data.get_parachute_id(parachute)
 
-            data.add_jump(numero_saut, jump_date, id_location, id_parachute)
+            data.add_jump(numero_saut, id_altitude, id_aircraft, id_location, id_jump_type, id_parachute, jump_date, comment)
 
             numero_prochain_saut += 1
 
@@ -46,8 +53,6 @@ def jumpform(request):
     return render(request, "savejump/jumpform.html", {"form" : form})
 
 def jumplist(request):
-    jumps = Jump.objects.all().order_by('jump_number')
-    location = Location.objects.all()
-
+    jumps = reversed(Jump.objects.all().order_by('jump_number'))
     context = {'jumps': jumps}
     return render(request, 'savejump/jumplist.html', context)

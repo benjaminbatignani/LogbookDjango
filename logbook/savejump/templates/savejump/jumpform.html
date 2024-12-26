@@ -2,31 +2,56 @@
 
 {% block content %}
 
-    <form action="{% url 'jumpform' %}" method="post" class="cust-form">
-       {% csrf_token %}
+    <div class="form-container">
+        <form action="{% url 'jumpform' %}" method="post" class="cust-form">
+           {% csrf_token %}
 
-        <div class="field">
-            <label class="label">Numéro du saut</label>
-            <div class="control">
-                <span>{{form.number}}</span>
+            <div class="field">
+                    <label class="label">Numéro du saut</label>
+                    {{form.number}}
             </div>
-        </div>
 
-        <div class="field">
-            <label class="label">Lieu</label>
-            <div class="control">
-                <span>{{form.location}}</span>
+            <div class="field">
+                <label class="label">Hauteur</label>
+                {{form.altitude}}
             </div>
-        </div>
 
-        <div class="field">
-            <label class="label">Parachute</label>
-            <div class="control">
-                <span>{{form.parachute}}</span>
+            <div class="field">
+                <label class="label">Avionr</label>
+                {{form.aircraft}}
             </div>
-        </div>
 
-        <input type="submit" value="Valider">
-    </form>
+            <div class="field">
+                <label class="label">Lieu</label>
+                {{form.location}}
+            </div>
+
+            <div class="field">
+                <label class="label">Type de saut</label>
+                {{form.jump_type}}
+            </div>
+
+            <div class="field">
+                <label class="label">Parachute</label>
+                {{form.parachute}}
+            </div>
+
+            <div class="field">
+                <label class="label">Date</label>
+                <div class="control">
+                    <span>{{form.jump_date}}</span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Commentaire</label>
+                <div class="control">
+                    <span>{{form.comment}}</span>
+                </div>
+            </div>
+
+            <input type="submit" value="Valider">
+        </form>
+    </div>
 
 {% endblock content %}
