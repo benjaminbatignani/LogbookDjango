@@ -48,6 +48,9 @@ class Location(models.Model):
     id_location = models.SmallAutoField(primary_key=True)
     location_name = models.CharField(max_length=200, blank=True, null=True)
 
+    def __str__(self):
+        return self.location_name
+
     class Meta:
         managed = True
         db_table = 'location'

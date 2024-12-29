@@ -6,3 +6,4 @@ urlpatterns = [
     path('savejump/', include('savejump.urls')),
     path('admin/', admin.site.urls),
 ]
+

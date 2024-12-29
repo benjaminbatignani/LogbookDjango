@@ -30,27 +30,29 @@
           <a class="navbar-item mx-5" href="{% url 'jumplist' %}">
             JumpList
           </a>
+
+          {% if user.groups.all.0.name == 'Moniteurs' %}
+          <a class="navbar-item mx-5" href="#">
+            Moniteurs
+          </a>
+          {% endif %}
         </div>
       </div>
-<!--        <div class="navbar-end">-->
-<!--          <div class="navbar-item has-dropdown is-hoverable">-->
-<!--            <a class="navbar-link">-->
-<!--              Paramètres-->
-<!--            </a>-->
+      <div class="navbar-end">
 
-<!--            <div class="navbar-dropdown">-->
-<!--              <a class="navbar-item">-->
-<!--                Réglages-->
-<!--              </a>-->
-<!--              <a class="navbar-item is-selected">-->
-<!--                Mon compte-->
-<!--              </a>-->
-<!--              <hr class="navbar-divider">-->
-<!--              <a class="navbar-item">-->
-<!--                Déconnexion-->
-<!--              </a>-->
-<!--            </div>-->
-          </div>
-        </div>
+        <button>
+          <a href="{% url 'login' %}">
+
+            {% if user.is_authenticated %}
+                Se déconnecter ({{user.first_name}})
+            {% else %}
+                Se connecter
+            {% endif %}
+
+          </a>
+        </button>
+
+      </div>
+
     </nav>
     <!-- header -->

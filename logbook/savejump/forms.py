@@ -5,9 +5,9 @@ from django.forms import ModelChoiceField
 # Cette classe permet de dire à Django que la propriété à utiliser dans le modèle
 # Location sera la propriété location_name. Sinon les valeurs dans la liste de séléction
 # ne seront pas adéquates
-class LocationModelChoiceField(ModelChoiceField):
-    def label_from_instance(self, obj):
-        return obj.location_name
+# class LocationModelChoiceField(ModelChoiceField):
+#     def label_from_instance(self, obj):
+#         return obj.location_name
 
 class ParachuteModelChoiceField(ModelChoiceField):
     def label_from_instance(self, obj):
@@ -32,7 +32,7 @@ class JumpForm(forms.Form):
                                                               "readonly" : ""}))
     # number.widget.attrs.update(attrs={"class" : "input"})
 
-    location = LocationModelChoiceField(label='Lieu',
+    location = ModelChoiceField(label='Lieu',
                                       queryset=Location.objects.all().order_by('location_name'),
                                       empty_label='- Lieu -',
                                       widget=forms.Select(attrs={"class" : "select is-small"})

@@ -54,4 +54,18 @@
         </form>
     </div>
 
+{% if is_success %}
+
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+      <div class="box">
+            <span class="has-text-success" style="font-size : 2rem">Le saut a bien été enregistré !</span>
+      </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+{% endif %}
+
 {% endblock content %}
