@@ -135,3 +135,39 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '{asctime} {name} {levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': '/Users/benjaminbatignani/Documents/Code/LogbookDjango/logbook/debug.log',
+            'formatter': 'simple'
+        },
+        'console': {
+            'level': 'INFO', # N'affiche que les enregistrements de niveau INFO ou supérieur
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+    },
+    'loggers': {
+        'savejump': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG', # N'accepte que les enregistrements de niveau DEBUG ou supérieur
+            'propagate': True,
+        },
+    },
+}
+# NIVEAU DES ENREGISTREMENTS DES LOGGERS
+# WARNING
+# INFO
+# DEBUG
+# NOTSET

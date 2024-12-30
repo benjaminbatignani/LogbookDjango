@@ -5,17 +5,31 @@ from django.contrib.auth.decorators import login_required
 from .models import Jump
 from .forms import JumpForm
 
+import logging
+
+logger = logging.getLogger("savejump")
+
 @login_required(login_url='savejump/login')
 def index(request):
+
+    logger.info("Entrée dans la vue Index")
+
+    request.session['name'] = 'BENJI'
 
     return render(request, 'savejump/index.html')
 
 def saisie(request):
     template = loader.get_template("savejump/saisie.html")
+
+    nom = request.session['name']
+    print(nom)
+
     context = {}
     return HttpResponse(template.render(context, request))
 
 def jumpform(request):
+    logger.debug("Entrée dans la vue JumpForm")
+
 
     is_success = False
 
@@ -24,7 +38,6 @@ def jumpform(request):
         last_jump_number = 0
     else:
         last_jump_number = Jump.objects.all().values()[0]['jump_number']
-        print(last_jump_number)
 
     numero_prochain_saut = last_jump_number + 1
 
